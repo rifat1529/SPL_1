@@ -111,7 +111,6 @@ void autoMoveBall(std::vector<sf::CircleShape> &balls, sf::RenderWindow &window,
     for (auto &ball : balls) {
         ball.move(ballVelocity);
 
-        // Check for collision with window borders
         if (ball.getPosition().x < 0 || ball.getPosition().x + ball.getRadius() * 2 > window.getSize().x) {
             ballVelocity.x = -ballVelocity.x;
         }
@@ -119,7 +118,7 @@ void autoMoveBall(std::vector<sf::CircleShape> &balls, sf::RenderWindow &window,
             ballVelocity.y = -ballVelocity.y;
         }
 
-        // Check for collision with paddle
+       
         if (ball.getGlobalBounds().intersects(paddle.getGlobalBounds())) {
             ballVelocity.y = -ballVelocity.y;
             float paddleCenter = paddle.getPosition().x + paddle.getSize().x / 2;
