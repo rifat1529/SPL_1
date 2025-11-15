@@ -404,7 +404,7 @@ int main(int argc, char const *argv[]) {
         scoreText.setString("Score: " + std::to_string(score) + " Lives: " + std::to_string(lives) + "\nPlayer: " + playerName + "\nHighest Score: " + std::to_string(highestScore));
 
         window.clear();
-        window.draw(backgroundSprite); // Draw background
+        window.draw(backgroundSprite); 
         for (const auto &ball : balls) {
             window.draw(ball);
         }
@@ -416,7 +416,6 @@ int main(int argc, char const *argv[]) {
         window.display();
     }
 
-    // Clean up dynamically allocated blocks
     for (auto block : blocks) {
         delete block;
     }
